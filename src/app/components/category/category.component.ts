@@ -9,7 +9,7 @@ import { CategoryService } from 'src/app/services/category.service';
 })
 export class CategoryComponent implements OnInit {
   categories:Category[]=[];
-  currentCategory:Category;
+  currentCategory:Category | null;
 
   constructor(private categoryService : CategoryService) { }
 
@@ -34,6 +34,10 @@ export class CategoryComponent implements OnInit {
     else{
     return "list-group-item"
     }
+  }
+// burda getallCategory yerine getallCategoryClass a bakabilirsin
+  getAllCategory(){
+    this.currentCategory=null
   }
 
   getAllCategoryClass(){
